@@ -142,7 +142,7 @@ function App() {
 
             <div>
               {user?.enabled ? (
-                <div>
+                <div className="flex flex-col items-center">
                   <MicIcon size={200} color="orange" />
                   <p>Recording sound... Sound Level: {audioData}%</p>
                 </div>
