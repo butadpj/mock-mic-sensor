@@ -13,8 +13,6 @@ function App() {
   const audioContextRef = useRef(null);
   const analyserRef = useRef(null);
   const microphoneRef = useRef(null);
-  const firebaseWorker = useRef(null);
-  const audioWorker = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -52,10 +50,10 @@ function App() {
       // analyserRef.current.connect(audioContextRef.current.destination);
 
       const processAudio = () => {
-        // Handle messages from Audio Processor worker
         const dataArray = new Uint8Array(analyserRef.current.frequencyBinCount);
         analyserRef.current.getByteTimeDomainData(dataArray); // Use time domain data for RMS calculation
 
+        // Handle messages from Audio Processor worker
         audioWorker.postMessage({ dataArray });
 
         requestAnimationFrame(processAudio);

@@ -14,6 +14,4 @@ self.onmessage = async (event) => {
   self.postMessage({
     value,
   });
-
-  // Optionally, you can send a message back to the main thread
 };
