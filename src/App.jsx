@@ -126,7 +126,7 @@ function App() {
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="p-2 rounded"
+                className="p-2 rounded border border-black dark:border-white"
               />
             </div>
             <button
